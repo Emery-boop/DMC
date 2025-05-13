@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DMC Web3 Wallet</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.6.2/dist/ethers.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>DMC Web3 Wallet</h1>
+      <div class="navbar">
+        <button id="connectBtn">Connect Wallet</button>
+        <select id="networkSelect">
+          <option value="sepolia">Sepolia</option>
+          <option value="mainnet">Mainnet</option>
+          <option value="rinkeby">Rinkeby</option>
+          <option value="bsc">Binance Smart Chain</option>
+          <option value="polygon">Polygon</option>
+        </select>
+      </div>
+    </header>
+
+    <main id="walletSection" class="hidden">
+      <!-- Portfolio Overview -->
+      <section class="card" id="portfolioOverview">
+        <h2>Portfolio Overview</h2>
+        <div id="totalValue">Loading...</div>
+        <div id="tokenBreakdown">Loading...</div>
+      </section>
+
+      <!-- Market Overview -->
+      <section class="card" id="marketOverview">
+        <h2>Market Overview</h2>
+        <div id="marketTrends">Loading...</div>
+      </section>
+
+      <!-- Live Price Chart -->
+      <section class="card" id="liveChart">
+        <h2>Live Price Chart</h2>
+        <canvas id="priceChart" width="400" height="200"></canvas>
+      </section>
+
+      <!-- Referral Program -->
+      <section class="card" id="referralProgram">
+        <h2>Referral Program</h2>
+        <p>Your Referral Link: <span id="referralLink">Not Available</span></p>
+      </section>
+
+      <!-- Staking -->
+      <section class="card" id="stakingSection">
+        <h2>Staking</h2>
+        <button id="stakeBtn">Stake Tokens</button>
+        <p id="stakingRewards">Your Rewards: 0 DMC</p>
+      </section>
+
+      <!-- Security Settings -->
+      <section class="card" id="securitySettings">
+        <h2>Security Settings</h2>
+        <button id="enable2FA">Enable 2FA</button>
+      </section>
+
+      <!-- News Feed -->
+      <section class="card" id="newsFeed">
+        <h2>Latest Crypto News</h2>
+        <ul id="newsList">Loading...</ul>
+      </section>
+
+      <!-- Transaction Fee Breakdown -->
+      <section class="card" id="feeBreakdown">
+        <h2>Transaction Fee Breakdown</h2>
+        <div id="feeDetails">Loading...</div>
+      </section>
+
+      <!-- Transaction History -->
+      <section class="card">
+        <h2>Transaction History</h2>
+        <ul id="txHistory"></ul>
+      </section>
+
+      <!-- Token Swap -->
+      <section class="card">
+        <h2>Token Swap</h2>
+        <input type="text" id="swapAmount" placeholder="Amount to Swap" />
+        <select id="swapFromToken">
+          <option value="eth">ETH</option>
+          <option value="dmc">DMC</option>
+        </select>
+        <select id="swapToToken">
+          <option value="dmc">DMC</option>
+          <option value="eth">ETH</option>
+        </select>
+        <button id="swapBtn">Swap Tokens</button>
+        <p id="swapStatus"></p>
+      </section>
+
+      <button id="disconnectBtn">Disconnect</button>
+    </main>
+    
+    <div id="loading" class="loading hidden">Loading...</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

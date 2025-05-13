@@ -1,0 +1,123 @@
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  color: #e0f7fa;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app {
+  max-width: 1000px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+header h1 {
+  color: #00bcd4;
+}
+
+.navbar {
+  display: flex;
+  gap: 10px;
+}
+
+select,
+button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button {
+  background: #00bcd4;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #0097a7;
+}
+
+button:disabled {
+  background: #4b7e8a;
+}
+
+/* Card Styles */
+.card {
+  background: #112a42;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(0,188,212,0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 40px rgba(0,188,212,0.4);
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  background: #1a2e47;
+  border: 1px solid #00bcd4;
+  color: white;
+  border-radius: 5px;
+}
+
+input:focus {
+  border-color: #00acc1;
+}
+
+/* Chart */
+#priceChart {
+  margin-top: 20px;
+}
+
+ul#txHistory {
+  list-style: none;
+  padding: 0;
+}
+
+ul#txHistory li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  border-bottom: 1px solid #00bcd4;
+  padding-bottom: 5px;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #00bcd4;
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
+
+/* News Feed */
+#newsList li {
+  padding: 5px 0;
+  font-size: 14px;
+  border-bottom: 1px solid #00bcd4;
+}
+
+#newsFeed {
+  max-height: 250px;
+  overflow-y: auto;
+}
